@@ -24,6 +24,9 @@ public class Variables : MonoBehaviour
     public int myFirstInt = 1; // an int can only hold whole numbers (1,2,3)
     private float myHeight = 180.67f; // a float holds decimal numbers (f = decimal/float)
     public double myFaveNumber = 187.45; // a double holds double a float (many more decimal points)
+    public string myName = "Tylor"; // a string can only hold words
+    public char myInitial = 's'; // a char can only hold a single character 
+    public bool isWearingAWatch = false; // a bool can only hold true or false
 
 
     #region all unity functions
