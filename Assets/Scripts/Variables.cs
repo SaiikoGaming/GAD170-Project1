@@ -7,6 +7,9 @@ using UnityEngine;
 /// </summary>
 public class Variables : MonoBehaviour
 {
+    #region code neatness tutorial 
+
+
     // single line comment
 
     /* multi line 
@@ -16,12 +19,14 @@ public class Variables : MonoBehaviour
     public bool myfirstbool = true;
     [Header("movement relatable")]
     public bool mysecondbool = false;
+    #endregion
+
+    public int myFirstInt = 1; // an int can only hold whole numbers (1,2,3)
+    private float myHeight = 180.67f; // a float holds decimal numbers (f = decimal/float)
+    public double myFaveNumber = 187.45; // a double holds double a float (many more decimal points)
 
 
     #region all unity functions
-    /// <summary>
-    /// Start is called before the first frame update
-    /// </summary>
     void Start()
     {
         
