@@ -7,6 +7,7 @@ public class LocalVariables : MonoBehaviour
     public string mName = "Tylor";
     public int myHealth = 100;
     private float myHeight = 155.23f;
+    
 
 
 
