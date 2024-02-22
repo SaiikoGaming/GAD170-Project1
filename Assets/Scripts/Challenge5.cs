@@ -56,13 +56,15 @@ public class Challenge5 : MonoBehaviour
 
     void Battle()
     {
-        if (playerOneHealth <= 0 || playerTwoHealth <= 0) 
+       
+        if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            Debug.Log("Battle can not commence");
-            return;
-        }
-        else if (Input.GetKeyDown(KeyCode.Space)) 
-        {
+            if (playerOneHealth <= 0 || playerTwoHealth <= 0)
+            {
+                Debug.Log("Battle can not commence");
+                return;
+            }
+
             Debug.Log("Battle Commmencing");
             playerOnePowerLevel = GeneratePowerLevel(playerOneIntelligence, playerOneAgility, playerOneStrength);
             playerTwoPowerLevel = GeneratePowerLevel(playerTwoIntelligence, playerTwoAgility, playerTwoStrength);
@@ -80,11 +82,7 @@ public class Challenge5 : MonoBehaviour
         // otherwise the same player will always win most likely 
         playerOnePowerLevel = intel + agil + strength + Random.Range(0, 5);
         playerTwoPowerLevel = intel + agil + strength + Random.Range(0, 5);
-        
-        int powerLevel = 0;
-        
-
-        return powerLevel;
+        return playerTwoPowerLevel;
     }
 
 
@@ -93,9 +91,18 @@ public class Challenge5 : MonoBehaviour
     {
         if(playerOnePowerLevel > playerTwoPowerLevel)
         {
-            // playerm one has more power
+            // player one has more power
             // deal a random amount of damage to the other player
-
+            playerTwoHealth -= Random.Range(1, 50);
+            Debug.Log("Player One Attacks!");
+            if(playerTwoHealth <= 0)
+            {
+                Debug.Log("Player Two Dies, Player One Wins!");
+            }
+            else
+            {
+                Debug.Log("Player Two's Health: " + playerTwoHealth);
+            }
             // check if other player has health left over, if not, tell us player one has won the game
 
         }
@@ -105,13 +112,39 @@ public class Challenge5 : MonoBehaviour
             // deal a random amount of damage to the other player
 
             // check if other player has health left over, if not, tell us player two has won the game
-
+            playerOneHealth -= Random.Range(1, 50);
+            Debug.Log("Player Two Attacks!");
+            if (playerOneHealth <= 0)
+            {
+                Debug.Log("Player One Dies, Player Two Wins!");
+            }
+            else
+            {
+                Debug.Log("Player One's Health: " + playerOneHealth);
+            }
 
         }
         else
         {
             // should we do anything if its a draw? maybe they both take damage
+            playerOneHealth -= Random.Range(1, 50);
+            playerTwoHealth -= Random.Range(1, 50);
+            Debug.Log("A Draw? Both Players Attack!!");
+            if (playerOneHealth <= 0)
+            {
+                Debug.Log("Player One Dies, Player Two Wins!");
+            }
+            else if (playerTwoHealth <= 0)
+            {
+                Debug.Log("Player Two Dies, Player One Wins!");
+            }
+            else
+            {
+                Debug.Log("Player One's Health: " + playerOneHealth);
+                Debug.Log("Player Two's Health: " + playerTwoHealth);
+            }
         }
+
     }
 
 }
