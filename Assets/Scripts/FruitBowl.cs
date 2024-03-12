@@ -39,7 +39,7 @@ public class FruitBole : MonoBehaviour
         myListName.RemoveAt(1); // this removes the element at this index 
 
         // myListName.Add('t'); // this will add a t to the last element of our list 
-        myListName.Insert(2, 't'); // this adds a t at element 2
+        myListName.Insert(1, 'Y'); // this adds a t at element 2
         // myListName.Clear(); // this will empty our list
         // add the L back in
         myName = new char[] { 'T', 'Y', 'L', 'O', 'R' };
@@ -65,6 +65,20 @@ public class FruitBole : MonoBehaviour
         {
             Debug.Log("The fruit name is: " + allFruitList[i].fruitName);
         }
+
+        //for each loop does the same as for int i, except it only works on collections of objects and
+        // typically does that set of instructions on each.
+        foreach(Fruit fruit in allFruitList)
+        {
+            
+            Debug.Log("The fruit name is: " + fruit.name);
+        }
+
+        foreach(char c in myListName)
+        {
+            Debug.Log(c);
+        }
+
     }
 
 
