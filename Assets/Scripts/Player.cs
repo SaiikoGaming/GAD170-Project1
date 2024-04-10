@@ -8,12 +8,14 @@ public class Player : MonoBehaviour
     
     public float health = 0;
     public string myName;
+    public Stats myStats = new Stats();
 
 
     // Start is called before the first frame update
     void Start()
     {
         health = Random.Range(0, 100);
+        myStats.RandomiseStats();
     }
 
     // Update is called once per frame

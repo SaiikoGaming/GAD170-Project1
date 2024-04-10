@@ -10,10 +10,10 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         //finding the enemymanager in the game
-        enemyManager = FindObjectOfType<EnemyManager>();
+         enemyManager = FindObjectOfType<EnemyManager>();
     }
 
-    public void TakeDamage(int amount)
+    public void takedamage(int amount)
     {
         health -= amount;
 
@@ -28,5 +28,5 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    
+
 }

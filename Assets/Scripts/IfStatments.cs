@@ -33,12 +33,14 @@ public class IfStatments : MonoBehaviour
             Debug.Log(" it is greater then 3");
         }
         // this is the left is exactly the right
-        if(myFaveNumber == myFaveNumber)
+#pragma warning disable CS1718 // Comparison made to same variable
+        if (myFaveNumber == myFaveNumber)
         {
             Debug.Log("5 is equal to 5");
         }
-        // as string example of the above, keep in mind its case sensitive 
-        if(myName == "Tylor")
+#pragma warning restore CS1718 // Comparison made to same variable
+                              // as string example of the above, keep in mind its case sensitive 
+        if (myName == "Tylor")
         {
             Debug.Log("Tylor");
         }

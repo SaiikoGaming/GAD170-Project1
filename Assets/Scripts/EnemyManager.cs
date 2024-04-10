@@ -31,7 +31,7 @@ public class EnemyManager : MonoBehaviour
         {
             for(int i = 0; i < allEnemies.Count; i++)
             {
-                allEnemies[i].TakeDamage(20);
+                //allEnemies[i].TakeDamage(20);
             }
         }
     }
